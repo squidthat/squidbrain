@@ -1,0 +1,44 @@
+{
+  "name": "squidbrain",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "repository": "git@github.com:squidthat/squidbrain.git",
+  "author": "William Di Pasquale <wdp@dipasqualew.com>",
+  "license": "AGPL-3.0-or-later",
+  "private": false,
+  "devDependencies": {
+    "@types/node": "^14.14.7",
+    "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint": "^7.13.0",
+    "jest": "^26.6.3",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.0.0",
+    "ts-node": "^9.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typeorm": "^0.2.29",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "fastify": "^3.8.0",
+    "knex": "^0.21.12",
+    "koa": "^2.13.0",
+    "pg": "^8.5.1",
+    "postgraphile": "^4.9.2",
+    "uuid": "^8.3.1"
+  },
+  "scripts": {
+    "build": "tsc",
+    "migrate:down": "knex migrate:down",
+    "migrate:latest": "knex migrate:latest",
+    "migrate:make": "knex migrate:make -x ts",
+    "migrate:retry": "yarn migrate:down && yarn migrate:up",
+    "migrate:rollback": "knex migrate:rollback",
+    "migrate:up": "knex migrate:up",
+    "seed:make": "knex seed:make -x ts",
+    "seed:run": "knex seed:run",
+    "serve": "node ./dist/index.js"
+  }
+}
