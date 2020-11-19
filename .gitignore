@@ -1,0 +1,11 @@
+# Build artifacts
+dist
+node_modules
+yarn-error.log
+
+# Secrets
+.env
+
+# Editors
+.vscode
+.idea
